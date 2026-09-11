@@ -23,13 +23,23 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
         className="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
       >
         {secHeading ? (
-          <h2 {...headerProps}>{title}</h2>
+          <h2
+            {...headerProps}
+            className={`${headerProps.className} text-xl sm:text-2xl`}
+          >
+            {title}
+          </h2>
         ) : (
-          <h3 {...headerProps}>{title}</h3>
+          <h3
+            {...headerProps}
+            className={`${headerProps.className} text-xl sm:text-2xl`}
+          >
+            {title}
+          </h3>
         )}
       </a>
       <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime} />
-      <p>{description}</p>
+      {/* <p>{description}</p> */}
     </li>
   );
 }
